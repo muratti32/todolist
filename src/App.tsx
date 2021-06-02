@@ -1,56 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useAppSelector, useAppDispatch } from "./app/hooks";
+import { addTodo } from "./app/todoSlice";
+import { useSelector } from "react-redux";
+import { RootState } from "./app/store";
+import TodoList from "./app/components/TodoList";
+import { AddTodoForm } from "./app/components/AddTodoForm";
+import CompletedTodoCount from "./app/components/CompletedTodoCount";
 
 function App() {
+  const dispatch = useAppDispatch();
+  const state = useSelector((state: RootState) => state.todo);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className="container bg-white p-4 mt-5">
+      <h2>Todo List</h2>
+      <AddTodoForm />
+      <TodoList />
+      <CompletedTodoCount />
     </div>
   );
 }
