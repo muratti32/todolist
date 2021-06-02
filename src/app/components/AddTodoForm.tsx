@@ -10,6 +10,9 @@ export const AddTodoForm = () => {
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
+    if (value.trim().length === 0) return;
+
     const newTodo: ITodo = {
       id: Date.now().toString(),
       title: value,
@@ -29,7 +32,7 @@ export const AddTodoForm = () => {
       ></input>
 
       <button type="submit" className="btn btn-primary mb-2">
-        Submit
+        Add Todo
       </button>
     </form>
   );
