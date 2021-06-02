@@ -1,13 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITodo } from "./Model/Todo";
-import type { RootState } from "./store";
-import produce from "immer";
 
 interface ITodoList {
   todoList: ITodo[];
 }
 
-// Define the initial state using that type
 const initialState: ITodoList = {
   todoList: [
     { id: "1", title: "buy a book", completed: false },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useAppDispatch } from "../../app/hooks";
 import { addTodo } from "../../app/todoSlice";
 import { ITodo } from "../Model/Todo";
 
