@@ -36,6 +36,16 @@ const TodoItem: React.FC<{ id: string; title: string; completed: boolean }> = (
           onClick={handleDeleteClick}
           className="btn btn-danger"
         >
+        <button
+          type="button"
+          onClick={handleDeleteClick}
+          className="btn btn-danger"
+        >
+        <button
+          type="button"
+          onClick={handleDeleteClick}
+          className="btn btn-danger"
+        >
           Delete
         </button>
       </div>
